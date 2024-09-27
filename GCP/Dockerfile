@@ -11,7 +11,7 @@ RUN pip install google-cloud-storage
 RUN pip install git pip
 
 # Copy the Python script into the container (you need to have a script in the same directory)
-COPY process_features.py /app/process_features.py
+COPY gcp_process_features.py /app/process_features.py
 
 # Set the working directory
 WORKDIR /app

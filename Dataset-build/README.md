@@ -1,8 +1,13 @@
-# Build Dataset
+# Build Seeds Dataset
+
+cd Dataset-build
 
 $ conda activate agro 
+
 $ python 1_process_features.py MaizTest
+
 $ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+
 $ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
 
 

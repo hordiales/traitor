@@ -14,6 +14,10 @@ $ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
 
 $ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
 
+## Simplified docker process
+
+  $ cd docker
+  $ docker build -t agrofeatures .
 
 ## traitor
 [![DOI](https://zenodo.org/badge/538830664.svg)](https://zenodo.org/badge/latestdoi/538830664)

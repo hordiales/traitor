@@ -4,15 +4,27 @@ Fork from traitor
 
 ## Build the Seeds Dataset
 
-cd Dataset-build
+30 samples from https://github.com/hellodfan/GrainSpace
 
-$ conda activate agro 
+The GrainSpace dataset is licensed under the Creative Commons BY-NC-SA 4.0 license. Note that All data must not be used for commercial purposes.
 
-$ python 1_process_features.py MaizTest
+Tagging [label-img](https://github.com/HumanSignal/labelImg) using YOLO format
 
-$ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+Features calculation
 
-$ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
+	$ cd Dataset-build
+
+	$ conda activate agro 
+
+	$ python 1_process_features.py MaizTest
+
+	$ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+
+	$ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
+
+Last step takes only one row for each image, taking the most similar bounding box between hand-made tagging and automated one.
+
+Example: [Ejemplo_de_clasificación_de_granos_de_maiz_en_base_a_features_pre_calculados.ipynb](Ejemplo_de_clasificación_de_granos_de_maiz_en_base_a_features_pre_calculados.ipynb)
 
 ## Simplified docker process
 

@@ -1,15 +1,25 @@
 # Build Seeds Dataset
 
-cd Dataset-build
 
-$ conda activate agro 
+30 samples from https://github.com/hellodfan/GrainSpace
 
-$ python 1_process_features.py MaizTest
+The GrainSpace dataset is licensed under the Creative Commons BY-NC-SA 4.0 license. Note that All data must not be used for commercial purposes.
 
-$ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+Tagging [label-img](https://github.com/HumanSignal/labelImg) using YOLO format
 
-$ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
+Features calculation
 
+	$ cd Dataset-build
+
+	$ conda activate agro 
+
+	$ python 1_process_features.py MaizTest
+
+	$ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+
+	$ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
+
+Last step takes only one row for each image, taking the most similar bounding box between hand-made tagging and automated one.
 
 # Example Dataset
 

@@ -1,6 +1,5 @@
 # Build Seeds Dataset
 
-
 30 samples from https://github.com/hellodfan/GrainSpace
 
 The GrainSpace dataset is licensed under the Creative Commons BY-NC-SA 4.0 license. Note that All data must not be used for commercial purposes.
@@ -9,15 +8,23 @@ Tagging [label-img](https://github.com/HumanSignal/labelImg) using YOLO format
 
 Features calculation
 
+Warning: In this process. It is assumed that there is only one entity per image 
+
 	$ cd Dataset-build
 
 	$ conda activate agro 
 
-	$ python 1_process_features.py MaizTest
+	$export GRAIN_DATASET="SojaBinario" 
+	$export GRAIN_DATASET="MaizTest" 
+	
+	(optional) 270 degrees rotate (EXIF Metadata)
+	$ python rotate_img.py $GRAIN_DATASET 270 
+	
+	$ python 1_process_features.py $GRAIN_DATASET
 
-	$ python 2_read_yolo_tag_and_append.py MaizTest_measurements.csv MaizTest
+	$ python 2_read_yolo_tag_and_append.py "${GRAIN_DATASET}_measurements.csv" $GRAIN_DATASET
 
-	$ python 3_filter_csv.py MaizTest_measurements_with_YOLO.csv 
+	$ python 3_filter_csv.py "${GRAIN_DATASET}_measurements_with_YOLO.csv" 
 
 Last step takes only one row for each image, taking the most similar bounding box between hand-made tagging and automated one.
 

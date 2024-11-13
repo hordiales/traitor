@@ -1,6 +1,7 @@
 import pandas as pd
 import argparse
 
+print("WARNING: In this process. It is assumed that there is only one entity per image")
 print("WARNING: traitor uses length, YOLO tags uses heigth")
 
 # Set up argument parser

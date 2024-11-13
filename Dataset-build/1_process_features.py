@@ -24,6 +24,7 @@ def process_files():
     subprocess.run(['traitor', 'align', '-i', input_folder, '-m', input_folder+"_extracted", '-o', input_folder+"_aligned"])
     print("Measure process")
     subprocess.run(['traitor', 'measure', '-i', input_folder+"_aligned", '-o', output_file])
+    #TODO: check error code, print error o sucess message
     print(f"{output_file} output generated")
     
 if __name__ == "__main__":

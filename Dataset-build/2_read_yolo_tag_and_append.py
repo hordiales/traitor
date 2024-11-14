@@ -26,7 +26,9 @@ for index, row in df.iterrows():
     
     # Construct the corresponding .txt filename
     # [:-2] is to remove _1 or _2 of each file, correspondind to each bb detected in extracted dir by traitor
-    txt_filename = os.path.join(args.directory, row['image_name'].rsplit('_', 1)[0] + '.txt') 
+    # txt_filename = os.path.join(args.directory, row['image_name'][-2] + '.txt') #Grain Dataset 
+    txt_filename = os.path.join(args.directory, row['image_name'].rsplit('_', 1)[0] + '.txt')
+    #txt_filename = os.path.join(args.directory, row['image_name'] + '.txt')  # SojaBinario
     # print(txt_filename)
 
 

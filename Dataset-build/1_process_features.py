@@ -29,5 +29,10 @@ def process_files():
     
 if __name__ == "__main__":
     process_files()
+    print("WARNING: si hay warnings en el proceso con error \"Mean of empty slice., invalid value encountered in scalar divide\", tal vez por imagenes todas en negro, eliminarlas del dataset, sino luego out of index errors")
 
-
+""" 
+Error example
+19/1276 [00:02<01:25, 14.66it/s] .. traitor/traitor/cli/extract.py:142: UserWarning: cf33569e-20241105_201505_24_A.jpg: Mean of empty slice., invalid value encountered in scalar divide
+  warnings.warn(f"{image_file.name}: {warnings_str}")
+"""

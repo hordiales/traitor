@@ -17,6 +17,10 @@ Warning: In this process. It is assumed that there is only one entity per image
 	$export GRAIN_DATASET="SojaBinario" 
 	$export GRAIN_DATASET="MaizTest" 
 	
+	(optional) rename jpg or txt files (to maintain yolo convention)
+			   useful because traitor adds a suffix number if detects many bounding boxes
+	$ python images_rename.py $GRAIN_DATASET "_A" # adds a suffix to every filename
+
 	(optional) 270 degrees rotate (EXIF Metadata)
 	$ python rotate_img.py $GRAIN_DATASET 270 
 	
